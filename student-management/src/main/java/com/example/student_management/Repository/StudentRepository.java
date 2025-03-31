@@ -24,7 +24,8 @@ public class StudentRepository {
     }
 
     // Додати нового студента
-    public void addStudent(Student student) {
+    public Student addStudent(Student student) {
         students.add(student);
+        return student;
     }
 }

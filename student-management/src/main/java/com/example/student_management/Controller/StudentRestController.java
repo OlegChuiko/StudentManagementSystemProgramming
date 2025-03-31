@@ -4,6 +4,9 @@ import com.example.student_management.Classes.Student;
 import com.example.student_management.Service.StudentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,9 +30,10 @@ public class StudentRestController {
     }
 
     @PostMapping
-    public Student addStudent(@Valid @RequestBody Student student) {
-        return studentService.addStudent(student);
-    }
+    public ResponseEntity<Student> addStudent(@Valid @RequestBody Student student) {
+        Student createdStudent = studentService.addStudent(student);
+        return new ResponseEntity<>(createdStudent, HttpStatus.CREATED);  
+}
 
     @PutMapping("/{id}")
     public Student updateStudent(@PathVariable Long id, @Valid @RequestBody Student student) {
