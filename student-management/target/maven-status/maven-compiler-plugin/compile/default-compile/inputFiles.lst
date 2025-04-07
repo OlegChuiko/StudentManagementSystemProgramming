@@ -1,7 +1,9 @@
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Classes\Role.java
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Classes\Student.java
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Classes\User.java
+C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Config\SecurityConfig.java
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Controller\HomeController.java
+C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Controller\LoginController.java
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Controller\StudentRestController.java
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Exception\GlobalExceptionHandler.java
 C:\Users\classuser73\Desktop\StudentManagementSystemProgramming-main\student-management\src\main\java\com\example\student_management\Repository\StudentRepository.java
