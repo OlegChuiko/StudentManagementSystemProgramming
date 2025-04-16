@@ -22,10 +22,10 @@ public class HomeController {
     public String home(Model model, Principal principal) {
         List<Student> students = studentService.getAllStudents();
         model.addAttribute("students", students);
-
+        System.out.println("Home"+ students.toString());
         // Симуляція отримання авторизованого користувача
-        User loggedInUser = new User(1L, principal.getName(), Set.of()); // Приклад без ролей
-        model.addAttribute("user", loggedInUser);
+        // User loggedInUser = new User(1L, principal.getName(), Set.of()); // Приклад без ролей
+        //model.addAttribute("user", loggedInUser);
 
         return "home"; // Повертає Thymeleaf-шаблон home.html
     }

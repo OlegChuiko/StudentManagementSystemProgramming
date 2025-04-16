@@ -5,8 +5,13 @@
 </head>
 <body>
     <h1>Список студентів</h1>
-    <p th:text="'Ласкаво просимо, ' + ${user.username}"></p>
-    <a href="/logout">Logout</a>
+
+    <p th:text="'Ласкаво просимо, ' + ${#authentication.name}"></p>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">🚪 Вийти</button>
+    </form>
+
     <table border="1">
         <tr>
             <th>ID</th>

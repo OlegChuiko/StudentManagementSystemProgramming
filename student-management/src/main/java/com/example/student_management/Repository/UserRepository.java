@@ -1,0 +1,6 @@
+package com.example.student_management.Repository;
+import com.example.student_management.Classes.*;
+import org.springframework.data.jpa.repository.JpaRepository;
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
+}

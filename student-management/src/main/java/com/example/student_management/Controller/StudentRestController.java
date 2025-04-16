@@ -2,7 +2,7 @@ package com.example.student_management.Controller;
 
 import com.example.student_management.Classes.Student;
 import com.example.student_management.Service.StudentService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

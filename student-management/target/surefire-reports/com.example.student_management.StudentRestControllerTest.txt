@@ -1,74 +1,64 @@
 -------------------------------------------------------------------------------
 Test set: com.example.student_management.StudentRestControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 2.070 s <<< FAILURE! -- in com.example.student_management.StudentRestControllerTest
-com.example.student_management.StudentRestControllerTest.testUpdateStudent -- Time elapsed: 0.494 s <<< FAILURE!
-Wanted but not invoked:
-studentService.updateStudent(
-    1L,
-    <any com.example.student_management.Classes.Student>
-);
--> at com.example.student_management.StudentRestControllerTest.testUpdateStudent(StudentRestControllerTest.java:95)
-Actually, there were zero interactions with this mock.
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 3.529 s <<< FAILURE! - in com.example.student_management.StudentRestControllerTest
+testUpdateStudent  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: 
+Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
 
-	at com.example.student_management.StudentRestControllerTest.testUpdateStudent(StudentRestControllerTest.java:95)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+testAddStudent  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: 
+Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
 
-com.example.student_management.StudentRestControllerTest.testAddStudent -- Time elapsed: 0.032 s <<< FAILURE!
-Wanted but not invoked:
-studentService.addStudent(
-    <any com.example.student_management.Classes.Student>
-);
--> at com.example.student_management.StudentRestControllerTest.testAddStudent(StudentRestControllerTest.java:82)
-Actually, there were zero interactions with this mock.
+testDeleteStudent  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: 
+Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
 
-	at com.example.student_management.StudentRestControllerTest.testAddStudent(StudentRestControllerTest.java:82)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+testGetAllStudents  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: 
+Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
 
-com.example.student_management.StudentRestControllerTest.testDeleteStudent -- Time elapsed: 0.029 s <<< FAILURE!
-java.lang.AssertionError: Status expected:<204> but was:<200>
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
-	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.example.student_management.StudentRestControllerTest.testDeleteStudent(StudentRestControllerTest.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-
-com.example.student_management.StudentRestControllerTest.testGetAllStudents -- Time elapsed: 0.036 s <<< FAILURE!
-java.lang.AssertionError: JSON path "$[0].name" expected:<Олег> but was:<Марія>
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.example.student_management.StudentRestControllerTest.testGetAllStudents(StudentRestControllerTest.java:55)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-
-com.example.student_management.StudentRestControllerTest.testGetStudentById -- Time elapsed: 0.034 s <<< FAILURE!
-java.lang.AssertionError: No value at JSON path "$.name"
-	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.example.student_management.StudentRestControllerTest.testGetStudentById(StudentRestControllerTest.java:67)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: java.lang.IllegalArgumentException: root can not be null
-	at com.jayway.jsonpath.internal.Utils.notNull(Utils.java:315)
-	at com.jayway.jsonpath.internal.path.EvaluationContextImpl.<init>(EvaluationContextImpl.java:61)
-	at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:96)
-	at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:107)
-	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:191)
-	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:393)
-	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:348)
-	... 7 more
+testGetStudentById  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: 
+Failed to execute SQL script statement #1 of URL [file:/C:/Users/classuser134/Desktop/JavaMachinka/student-management/target/classes/schema.sql]: CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "USERS" already exists; SQL statement:
+CREATE TABLE users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(100) NOT NULL, enabled BOOLEAN NOT NULL ) [42101-214]
 
