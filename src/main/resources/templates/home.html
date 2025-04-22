@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <nav class="nav">
+        <a th:href="@{/}">Home</a>
+        <div sec:authorize="isAuthenticated()">
+            <a th:href="@{/admin/dashboard}" sec:authorize="hasRole('ROLE_ADMIN')">Admin Dashboard</a>
+            <a th:href="@{/students}" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')">View Students</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        </div>
+        <div sec:authorize="!isAuthenticated()">
+            <a th:href="@{/login}" class="btn btn-primary">Login</a>
+            <a th:href="@{/register}" class="btn btn-secondary">Register</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Welcome to Student Management System</h1>
+            
+            <div sec:authorize="!isAuthenticated()" class="login-prompt">
+                <h2>Get Started</h2>
+                <p>Please log in or register to access the system features.</p>
+                <div class="actions">
+                    <a th:href="@{/login}" class="btn btn-primary">Login</a>
+                    <a th:href="@{/register}" class="btn btn-secondary">Register</a>
+                </div>
+            </div>
+
+            <div sec:authorize="isAuthenticated()" class="welcome-section">
+                <h2>Welcome back, <span sec:authentication="name"></span>!</h2>
+                <p>You are logged in as: <span sec:authentication="principal.authorities"></span></p>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Quick Actions</h3>
+                        <div class="actions">
+                            <a th:href="@{/students}" class="btn btn-primary">View Students</a>
+                            <a th:href="@{/admin/dashboard}" sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-secondary">Admin Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2>System Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Student Management</h3>
+                        <p>Manage student records, grades, and academic progress.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>User Management</h3>
+                        <p>Handle user accounts and permissions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Reports</h3>
+                        <p>Generate reports and analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

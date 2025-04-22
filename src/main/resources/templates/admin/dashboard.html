@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <nav class="nav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/admin/register}">Create New Admin</a>
+        <form th:action="@{/logout}" method="post" style="display: inline;">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Admin Dashboard</h1>
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <div class="welcome-section">
+                    <h2>Welcome, <span sec:authentication="name"></span>!</h2>
+                    <p class="roles">Your roles: <span sec:authentication="principal.authorities"></span></p>
+                </div>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Quick Actions</h3>
+                    <div class="actions">
+                        <a th:href="@{/admin/register}" class="btn btn-primary">Create New Admin</a>
+                        <a th:href="@{/}" class="btn btn-secondary">View Home Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

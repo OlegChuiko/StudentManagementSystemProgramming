@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <nav class="nav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="card register-card">
+            <h1>Create Account</h1>
+            
+            <div th:if="${error}" class="alert alert-error" th:text="${error}">
+                Error message here
+            </div>
+            
+            <form th:action="@{/register}" method="post" class="register-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="Choose a username"/>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Create a password"/>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required 
+                           placeholder="Confirm your password"/>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <a th:href="@{/login}" class="btn btn-secondary">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 

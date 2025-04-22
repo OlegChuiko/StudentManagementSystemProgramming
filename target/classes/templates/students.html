@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Students List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <nav class="nav">
+        <a th:href="@{/home}">Home</a>
+        <a th:href="@{/students}" class="active">Students</a>
+        <div sec:authorize="isAuthenticated()">
+            <a th:href="@{/admin/dashboard}" sec:authorize="hasRole('ROLE_ADMIN')">Admin Dashboard</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Students List</h1>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th sec:authorize="hasRole('ROLE_ADMIN')">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="student : ${students}">
+                            <td th:text="${student.id}"></td>
+                            <td th:text="${student.name}"></td>
+                            <td th:text="${student.age}"></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/admin/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Edit</a>
+                                <a th:href="@{/admin/students/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div sec:authorize="hasRole('ROLE_ADMIN')" class="actions" style="margin-top: 2rem;">
+                <a th:href="@{/admin/students/add}" class="btn btn-primary">Add New Student</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
